@@ -1,0 +1,6 @@
+{
+  "name": "SmartCred – Smart Appointment Booking & Management System",
+  "description": "Full-stack appointment scheduling, QR check-in verification, and multi-role practice management platform.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

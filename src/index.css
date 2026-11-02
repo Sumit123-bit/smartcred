@@ -1,0 +1,88 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-sans: "DM Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+:root,
+html[data-glass-theme="navy"] {
+  --sc-bg: #080c16;
+  --sc-sidebar: #0b101d;
+  --sc-panel: rgba(15, 23, 42, 0.68);
+  --sc-nav: rgba(8, 12, 22, 0.84);
+  --sc-border: rgba(255, 255, 255, 0.08);
+}
+
+html[data-glass-theme="violet"] {
+  --sc-bg: #0b0818;
+  --sc-sidebar: #110c24;
+  --sc-panel: rgba(24, 16, 48, 0.68);
+  --sc-nav: rgba(11, 8, 24, 0.85);
+  --sc-border: rgba(167, 139, 250, 0.14);
+}
+
+html[data-glass-theme="slate"] {
+  --sc-bg: #090f14;
+  --sc-sidebar: #0d151d;
+  --sc-panel: rgba(15, 28, 38, 0.7);
+  --sc-nav: rgba(9, 15, 20, 0.85);
+  --sc-border: rgba(148, 163, 184, 0.12);
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    background-color: var(--sc-bg);
+    color: #f1f5f9;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.sc-canvas {
+  background-color: var(--sc-bg);
+}
+
+.sc-sidebar {
+  background-color: var(--sc-sidebar);
+}
+
+.glass-panel {
+  background: var(--sc-panel);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--sc-border);
+}
+
+.glass-nav {
+  background: var(--sc-nav);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--sc-border);
+}
+
+@media print {
+  header,
+  footer,
+  aside,
+  .no-print {
+    display: none !important;
+  }
+  body,
+  html {
+    background: #ffffff !important;
+    color: #0f172a !important;
+  }
+}
